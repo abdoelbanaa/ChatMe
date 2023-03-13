@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+#app {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+div#chat_container {
+    width:100vw;
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+div#chat_container > div {
+	width: 100vw;
+	position: relative;
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+#btn_speaker {
+align-self: center;
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background: #5436DA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai .profile {
+  background: #10a37f;
+}
+
+.profile img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.menu{
+  position: absolute;
+  width: 100%;
+  padding-right: 50px;
+  gap: 2em;
+  height: 3.5em;
+  z-index: 1;
+  margin-top: 12px;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#titleNameShort{
+  font-family: 'Pacifico', cursive;
+  color: #343749;
+  font-size: 35px;
+  margin-left: 26px;
+  display: none;
+  text-align: left;
+}
+
+.ads{
+  color: #d9d9d9;
+  height: 5.5rem;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  justify-content: center;
+  background: #343749;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.ads p{
+align-self: center;
+}
+
+#titleName {
+  font-family: 'Pacifico', cursive;
+  color: #343749;
+  font-size: 45px;
+  margin-left: 26px;
+  text-align: left;
+}
+
+.message {
+  max-width: 80%;
+  overflow-x: scroll;
+  justify-content: start;
+  align-items: start;
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.msgbg{
+  padding: 10px;
+  color: #343749;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 200px;
+  width: 100%;
+  background: #d9d9d9;
+}
+
+.ai .msgbg{
+  color: #343749;
+  background: #c4c4c4;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+form {
+  margin-left: 26px;
+  z-index: 2;
+  width: 50%;
+  padding: 10px;
+  background: #d9d9d9;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  height: 3.5em;
+  margin-top: 12px;
+  flex-direction: row;
+}
+
+#textareaField {
+  width: 100%;
+  resize: none;
+  color: #343749;
+  font-size: 16px;
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+#textareaField[type='text'] {
+  touch-action: manipulation;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+form svg {
+  margin-right: 5px;
+  width: 22px;
+  height: 22px;
+}
+
+#toggle-switch {
+  width: 55px;
+  height: 30px;
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+#toggle-switch input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.voiceText {
+  color: #343749;
+}
+
+
+#toggle-switch label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color:#3F4349;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+#toggle-switch input[type="checkbox"]:checked + label {
+  left: 25px;
+  background-color: #5436DA;
+}
+
+#toggle-switch2 {
+  width: 55px;
+  height: 30px;
+  background-color: #d9d9d9;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+#toggle-switch2 input[type="checkbox"] {
+  visibility: hidden;
+}
+
+#toggle-switch2 label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color:#3F4349;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+#toggle-switch2 input[type="checkbox"]:checked + label {
+  left: 25px;
+  background-color: #5436DA;
+}
+
+.sticky {
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 6;
+  width: 100%;
+  gap: 2em;
+  height: 4.5em;
+  align-items: center;
+  display: none;
+  justify-content: center;
+  box-shadow: 0 -5px 5px -5px #000;
+}
+
+#menu__btn{
+margin-left: 1;
+align-items: center;
+justify-content: center;
+align-self: center;
+margin-left: 2em;
+display: none;
+}
+
+
+#my-select{
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' id='Bold' viewBox='0 0 24 24' width='24' height='24' fill='black'><path d='M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm.5,20.975V19.69A4.19,4.19,0,0,0,8.31,15.5H8.3a3.143,3.143,0,0,1-2.223-.921L3.024,11.524A8.985,8.985,0,0,1,17.016,4.532a1.548,1.548,0,0,1-.913.3H14.669A1.555,1.555,0,0,0,13.114,6.39V7.432a1.555,1.555,0,0,1-1.555,1.555h0A1.555,1.555,0,0,0,10,10.542v1.042a1.555,1.555,0,0,0,1.555,1.555h4.156a1.555,1.555,0,0,1,1.555,1.555v1.52a1.555,1.555,0,0,0,.456,1.1l.833.833A8.964,8.964,0,0,1,12.5,20.975Z'/></svg>");
+  background-repeat: no-repeat;
+  width: 26px;
+  text-indent: -9999px;
+  height:26px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#my-select:focus {
+  outline: none;
+}
+
+
+
+svg {
+  fill: #3F4349;
+}
+
+
+.popup-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: auto;
+  background-color: #fff;
+  height: 500px;
+  box-shadow: 0px 8px 16px 0px rgba(64, 64, 64, 0.2);
+}
+.popup-content option {
+  color: #1A1A1A;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.popup-content option:hover {
+  background-color: #3F4349;
+  color: #fff;
+}
+.popup:hover .popup-content {
+  display: block;
+}
+
+
+@media (max-width: 1000px) { 
+  form {
+    width: 100%;
+    margin-right: 22px;
+  }
+  #chat_container{
+    margin-left: 20px;
+  }
+  #menu__btn{
+    margin-right: 42px;
+  }
+}
+
+@media (max-width: 1260px) { 
+  .menu {
+   display: none;
+  }
+  #menu__btn{
+    display: block;
+  }
+  .popup-content {
+    background-color: #fff;
+    top: -700%;
+    right: 0.1px;
+  }
+}
+
+@media (max-width: 800px) { 
+  #titleName {
+    display: none;
+  }
+  #titleNameShort{
+    display: block;
+    margin-top: 6px;
+  }
+  #chat_container{
+    margin-left: 20px;
+  }
+  
+  form {
+    width: 100%;
+    margin-right: 12px;
+  }
+
+  #menu__btn{
+    margin-right: 12px;
+    margin-left: 0;
+  }
+
+}
